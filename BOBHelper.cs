@@ -20,7 +20,7 @@ namespace MyBestBuddy
             IWebDriver driver = new ChromeDriver(options);
             driver.Url = "http://www.barodanzltd.co.nz/";
             driver.Navigate();
-            string exchangeRate = driver.FindElement(By.Id("lbl_amount_1")).Text;
+            string exchangeRate = driver.FindElements(By.TagName("td"))[6].Text;
             driver.Close();
             driver.Quit();
             return exchangeRate;
